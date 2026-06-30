@@ -1,0 +1,18 @@
+export const techUrls: Record<string, string> = {
+  React: "https://react.dev",
+  "Next.js": "https://nextjs.org",
+  TypeScript: "https://www.typescriptlang.org",
+  "Tailwind CSS": "https://tailwindcss.com",
+  Python: "https://www.python.org",
+  "Node.js": "https://nodejs.org",
+  Java: "https://www.java.com",
+  Go: "https://go.dev",
+  PostgreSQL: "https://www.postgresql.org",
+  MySQL: "https://www.mysql.com",
+  MongoDB: "https://www.mongodb.com",
+  SQL: "https://www.iso.org/standard/63555.html",
+  Docker: "https://www.docker.com",
+  AWS: "https://aws.amazon.com",
+  Azure: "https://azure.microsoft.com",
+  Kubernetes: "https://kubernetes.io",
+};

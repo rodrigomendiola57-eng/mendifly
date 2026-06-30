@@ -1,0 +1,21 @@
+.animated-logo__scan {
+  pointer-events: none;
+}
+
+.animated-logo__wordmark {
+  transition: fill 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animated-logo-link {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-logo__scan {
+    display: none;
+  }
+
+  .animated-logo__wordmark {
+    transition: none;
+  }
+}
