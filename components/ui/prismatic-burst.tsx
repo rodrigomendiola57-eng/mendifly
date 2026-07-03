@@ -277,7 +277,13 @@ export function PrismaticBurst({
     let gl: Renderer["gl"];
 
     try {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      // Cap DPR más bajo en móvil: el shader es fill-rate intensivo y en
+      // pantallas de alta densidad (dpr 3) satura la GPU de gama baja.
+      const isMobileViewport = window.innerWidth < 768;
+      const dpr = Math.min(
+        window.devicePixelRatio || 1,
+        isMobileViewport ? 1.5 : 2,
+      );
       renderer = new Renderer({
         dpr,
         alpha: false,

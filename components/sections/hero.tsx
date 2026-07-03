@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Component, type ReactNode } from "react";
 
@@ -9,7 +10,13 @@ import { Button } from "@/components/ui/button";
 import { FadeUp } from "@/components/ui/fade-up";
 import { HeroTextCarousel } from "@/components/ui/hero-text-carousel";
 import { Magnetic } from "@/components/ui/magnetic";
-import { PrismaticBurst } from "@/components/ui/prismatic-burst";
+
+// Fondo WebGL diferido: no bloquea el render inicial ni la hidratación.
+const PrismaticBurst = dynamic(
+  () =>
+    import("@/components/ui/prismatic-burst").then((mod) => mod.PrismaticBurst),
+  { ssr: false },
+);
 
 class WebGLErrorBoundary extends Component<
   { children: ReactNode },

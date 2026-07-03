@@ -20,7 +20,7 @@ export function TechMarquee({ className }: TechMarqueeProps) {
         className,
       )}
       role="region"
-      aria-label="Tecnologías del stack Menditech"
+      aria-label="Tecnologías del stack Mendifly"
     >
       {/* Two identical strips so the loop is seamless */}
       <div className="flex w-max animate-tech-marquee [animation-play-state:running] hover:[animation-play-state:paused] motion-reduce:animate-none">

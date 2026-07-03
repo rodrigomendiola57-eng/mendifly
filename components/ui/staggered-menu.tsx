@@ -55,7 +55,7 @@ export function StaggeredMenu({
   displayItemNumbering = true,
   className,
   logo,
-  logoUrl = "/logo-menditech.png",
+  logoUrl = "/logo-mendifly.png",
   menuButtonColor = "#fff",
   openMenuButtonColor = "#fff",
   accentColor = "#22d3ee",
@@ -420,11 +420,11 @@ export function StaggeredMenu({
         }
       >
         {logo ?? (
-          <Link href="/" className="sm-logo" aria-label="Menditech — Inicio">
+          <Link href="/" className="sm-logo" aria-label="Mendifly — Inicio">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={logoUrl}
-              alt="Menditech"
+              alt="Mendifly"
               className="sm-logo-img"
               draggable={false}
               width={130}

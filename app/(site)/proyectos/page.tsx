@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 import { ProjectsPageShell } from "@/components/sections/projects-page-shell";
 
 export const metadata: Metadata = {
-  title: "Proyectos — Menditech",
+  title: "Proyectos",
   description:
-    "Portafolio de webs, sistemas a medida, e-commerce e integraciones desarrolladas por Menditech. Soluciones reales para problemas de negocio.",
+    "Portafolio de webs, sistemas a medida, e-commerce e integraciones desarrolladas por Mendifly. Soluciones reales para problemas de negocio.",
+  alternates: { canonical: "/proyectos" },
 };
 
 export default function ProyectosPage() {

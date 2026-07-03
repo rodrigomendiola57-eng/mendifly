@@ -106,14 +106,14 @@ export function ServiceCardMobile({ service, index }: ServiceCardMobileProps) {
 
       <motion.h3
         variants={item}
-        className="relative font-display text-2xl font-semibold tracking-tight text-white"
+        className="relative font-display text-3xl font-light leading-[1.04] tracking-[-0.055em] text-white"
       >
         {service.title}
       </motion.h3>
 
       <motion.p
         variants={item}
-        className="relative mt-2.5 text-sm leading-relaxed text-zinc-400"
+        className="relative mt-4 text-[0.95rem] font-light leading-relaxed tracking-[-0.01em] text-zinc-400"
       >
         {service.fullDescription}
       </motion.p>
@@ -125,7 +125,7 @@ export function ServiceCardMobile({ service, index }: ServiceCardMobileProps) {
         {service.features.map((feature) => (
           <li
             key={feature}
-            className="flex items-start gap-2.5 text-sm text-zinc-300"
+            className="flex items-start gap-2.5 text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-300"
           >
             <span
               className={cn(
@@ -144,7 +144,7 @@ export function ServiceCardMobile({ service, index }: ServiceCardMobileProps) {
         <Link
           href={contactHref}
           className={cn(
-            "flex h-12 w-full items-center justify-center gap-2 rounded-xl text-sm font-semibold text-white transition-transform active:scale-[0.98]",
+            "flex h-12 w-full items-center justify-center gap-2 rounded-xl text-sm font-medium tracking-[-0.01em] text-white transition-transform active:scale-[0.98]",
             a.cta,
           )}
         >

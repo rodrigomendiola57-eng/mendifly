@@ -38,7 +38,7 @@ export function ServicesGrid({
       <div className="relative mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-24">
         {showHeader && (
           <FadeUp inView delay={0.05} className="mb-16 max-w-2xl">
-            <p className="text-sm font-medium uppercase tracking-widest text-cyan-500/80">
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-cyan-500/80 sm:text-sm">
               Servicios
             </p>
             <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -47,7 +47,7 @@ export function ServicesGrid({
                 escalar tu negocio
               </span>
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-zinc-400 md:text-lg">
+            <p className="mt-5 text-base font-light leading-relaxed tracking-[-0.01em] text-zinc-400 md:text-lg">
               Cada sistema que construimos combina diseño premium, ingeniería
               sólida y la precisión que tu operación exige.
             </p>

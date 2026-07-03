@@ -17,7 +17,7 @@ export function ProjectsPageHero() {
               {projectsPageCopy.titleAccent}
             </span>
           </h1>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-zinc-300 sm:mt-6 sm:text-base md:text-lg md:text-zinc-400">
+          <p className="mt-4 max-w-2xl text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-300 sm:mt-6 sm:text-base md:text-lg md:text-zinc-400">
             {projectsPageCopy.subtitle}
           </p>
         </FadeUp>

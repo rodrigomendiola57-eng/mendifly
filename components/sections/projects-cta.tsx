@@ -12,10 +12,10 @@ export function ProjectsCta() {
     <section className="relative border-t border-zinc-900/50">
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 md:py-16 lg:px-8">
         <FadeUp inView delay={0.05} className="mx-auto max-w-xl text-center">
-          <h2 className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl md:text-3xl">
+          <h2 className="font-display text-3xl font-light leading-[1.05] tracking-[-0.055em] text-white sm:text-4xl md:text-5xl">
             {projectsPageCopy.ctaTitle}
           </h2>
-          <p className="mt-2.5 text-sm leading-relaxed text-zinc-300 sm:mt-3 sm:text-base sm:text-zinc-400">
+          <p className="mt-4 text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-300 sm:text-base sm:text-zinc-400">
             {projectsPageCopy.ctaDescription}
           </p>
           <Button asChild size="lg" className="mt-6 h-12 w-full sm:mt-8 sm:w-auto">

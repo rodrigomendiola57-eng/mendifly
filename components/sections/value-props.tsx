@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Beams } from "@/components/ui/beams";
+import { BeamsBackdrop } from "@/components/ui/beams-backdrop";
 import { FadeUp } from "@/components/ui/fade-up";
 import { ScrollFloat } from "@/components/ui/scroll-float";
 import { TechGrid } from "@/components/ui/tech-grid";
@@ -20,7 +20,7 @@ export function ValueProps() {
     >
       {/* Beams background */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <Beams
+        <BeamsBackdrop
           lightColor="#A855F7"
           beamWidth={3.1}
           beamHeight={30}
@@ -61,7 +61,7 @@ export function ValueProps() {
           </p>
         </FadeUp>
 
-        {/* Floating carousel — all screen sizes */}
+        {/* Carrusel: simple en móvil, premium en desktop */}
         <FadeUp inView delay={0.15}>
           <ValueCarousel
             ariaLabel="Beneficios de valor agregado"

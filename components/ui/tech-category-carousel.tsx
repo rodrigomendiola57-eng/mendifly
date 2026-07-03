@@ -146,7 +146,7 @@ export function TechCategoryCarousel({
         }
       >
         <header className="mb-5 w-full text-center">
-          <h3 className="font-display text-2xl font-semibold tracking-tight sm:text-[1.65rem]">
+          <h3 className="font-display text-3xl font-light leading-[1.05] tracking-[-0.055em] sm:text-[2.15rem]">
             <ShimmerText className={cn("bg-gradient-to-r bg-clip-text", accent.titleGradient)}>
               {group.title}
             </ShimmerText>
@@ -162,7 +162,7 @@ export function TechCategoryCarousel({
 
           <p
             className={cn(
-              "mt-3 inline-flex rounded-full border px-3 py-1 font-mono text-[9px] uppercase tracking-[0.22em] sm:text-[10px]",
+              "mt-3 inline-flex rounded-full border px-3 py-1 font-mono text-[8px] uppercase tracking-[0.22em] sm:text-[9px]",
               accent.badge,
             )}
           >

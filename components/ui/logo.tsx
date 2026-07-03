@@ -17,12 +17,12 @@ export function Logo({
   return (
     <Link
       href="/"
-      aria-label="Endifly — Inicio"
+      aria-label="Mendifly — Inicio"
       className={cn("inline-flex shrink-0 items-center", className)}
     >
       <Image
-        src="/logo-menditech.png"
-        alt="Endifly"
+        src="/logo-mendifly.png"
+        alt="Mendifly"
         width={955}
         height={190}
         quality={100}

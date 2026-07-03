@@ -49,10 +49,10 @@ function ServiceCardContent({
       />
 
       <div className="relative z-[2] flex flex-1 flex-col">
-        <h3 className="font-display text-xl font-semibold tracking-tight text-white md:text-2xl">
+        <h3 className="font-display text-2xl font-light leading-[1.08] tracking-[-0.05em] text-white md:text-3xl">
           {service.title}
         </h3>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
+        <p className="mt-4 text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-400 md:text-base">
           {description}
         </p>
 
@@ -61,7 +61,7 @@ function ServiceCardContent({
             {service.features.map((feature) => (
               <li
                 key={feature}
-                className="flex items-start gap-2 text-sm text-zinc-500"
+                className="flex items-start gap-2 text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-500"
               >
                 <span
                   className={cn(
@@ -93,7 +93,7 @@ function ServiceCardContent({
       {variant === "compact" && (
         <Link
           href={contactHref}
-          className="relative z-[3] mt-6 flex items-center gap-2 text-xs font-medium text-cyan-500/70 transition-colors duration-300 group-hover:text-cyan-400"
+          className="relative z-[3] mt-6 flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-cyan-500/70 transition-colors duration-300 group-hover:text-cyan-400"
         >
           <span className="h-px w-8 bg-cyan-500/40 transition-all duration-300 group-hover:w-12 group-hover:bg-cyan-400/60" />
           Solicitar información

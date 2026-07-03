@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 
+import { siteName, siteUrl } from "@/lib/site";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,13 +28,66 @@ export const viewport: Viewport = {
   themeColor: "#050505",
 };
 
+const description =
+  "Desarrollo web corporativo de alto impacto y sistemas de gestión empresarial. Flotillas, CRM y POS con tecnología de vanguardia.";
+
 export const metadata: Metadata = {
-  title: "Menditech — Technology Studio",
-  description:
-    "Desarrollo web corporativo de alto impacto y sistemas de gestión empresarial. Flotillas, CRM y POS con tecnología de vanguardia.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Mendifly — Technology Studio",
+    template: "%s — Mendifly",
+  },
+  description,
+  applicationName: siteName,
+  keywords: [
+    "desarrollo web",
+    "software a la medida",
+    "sistemas empresariales",
+    "CRM",
+    "POS",
+    "e-commerce",
+    "Next.js",
+    "Mendifly",
+  ],
+  authors: [{ name: siteName }],
+  creator: siteName,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: siteUrl,
+    siteName,
+    title: "Mendifly — Technology Studio",
+    description,
+    images: [
+      {
+        url: "/logo-mendifly.png",
+        width: 955,
+        height: 190,
+        alt: "Mendifly",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mendifly — Technology Studio",
+    description,
+    images: ["/logo-mendifly.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+    },
+  },
   icons: {
-    icon: "/logo-menditech.png",
-    apple: "/logo-menditech.png",
+    icon: "/logo-mendifly.png",
+    apple: "/logo-mendifly.png",
   },
 };
 

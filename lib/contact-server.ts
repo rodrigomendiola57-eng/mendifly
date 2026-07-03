@@ -107,7 +107,7 @@ async function storeLead(data: ContactFormPayload): Promise<boolean> {
 async function sendLeadEmail(data: ContactFormPayload): Promise<boolean> {
   const resend = getResend();
   const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL ?? "Menditech <onboarding@resend.dev>";
+  const from = process.env.CONTACT_FROM_EMAIL ?? "Mendifly <onboarding@resend.dev>";
 
   if (!resend || !to) return false;
 
@@ -119,7 +119,7 @@ async function sendLeadEmail(data: ContactFormPayload): Promise<boolean> {
     replyTo: data.email,
     subject: `Nuevo lead: ${serviceLabel} — ${data.name}`,
     text: [
-      "Nuevo contacto desde Menditech",
+      "Nuevo contacto desde Mendifly",
       "",
       `Nombre: ${data.name}`,
       `Correo: ${data.email}`,
@@ -132,7 +132,7 @@ async function sendLeadEmail(data: ContactFormPayload): Promise<boolean> {
     ].join("\n"),
     html: `
       <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111">
-        <h2 style="margin:0 0 12px">Nuevo contacto — Menditech</h2>
+        <h2 style="margin:0 0 12px">Nuevo contacto — Mendifly</h2>
         <p><strong>Nombre:</strong> ${escapeHtml(data.name)}</p>
         <p><strong>Correo:</strong> ${escapeHtml(data.email)}</p>
         <p><strong>Teléfono:</strong> ${escapeHtml(data.phone || "No indicado")}</p>

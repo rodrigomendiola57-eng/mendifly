@@ -1,6 +1,6 @@
 "use client";
 
-import { Beams } from "@/components/ui/beams";
+import { BeamsBackdrop } from "@/components/ui/beams-backdrop";
 import { TechGrid } from "@/components/ui/tech-grid";
 import { ServicesGrid } from "@/components/sections/services-grid";
 import { ServicesProcess } from "@/components/sections/services-process";
@@ -12,7 +12,7 @@ export function ServicesBody() {
         aria-hidden
         className="pointer-events-none absolute inset-0 max-md:brightness-[1.35] max-md:saturate-110 max-md:contrast-105"
       >
-        <Beams
+        <BeamsBackdrop
           lightColor="#06b6d4"
           beamWidth={2.6}
           beamHeight={26}

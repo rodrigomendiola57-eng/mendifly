@@ -225,7 +225,7 @@ function ProjectCoverGallery({
 
       {current.label && (
         <div className="pointer-events-none absolute left-2.5 top-2.5 z-10 sm:left-3 sm:top-3">
-          <span className="rounded-full border border-white/10 bg-zinc-950/70 px-2 py-0.5 text-[0.6rem] font-medium uppercase tracking-wider text-white/90 backdrop-blur-sm sm:px-2.5 sm:py-1 sm:text-xs">
+          <span className="rounded-full border border-white/10 bg-zinc-950/70 px-2 py-0.5 text-[0.6rem] font-medium uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm sm:px-2.5 sm:py-1 sm:text-xs">
             {current.label}
           </span>
         </div>
@@ -287,7 +287,7 @@ function ProjectCoverGallery({
             ))}
           </div>
           {isCoarse && (
-            <p className="text-[0.65rem] font-medium uppercase tracking-widest text-zinc-500">
+            <p className="text-[0.65rem] font-medium uppercase tracking-[0.22em] text-zinc-500">
               {enableLightbox ? "Desliza o toca para ampliar" : "Desliza para ver capturas"}
             </p>
           )}
@@ -341,7 +341,7 @@ function ProjectCover({
     >
       {isLive ? (
         <>
-          <span className="font-display text-lg font-semibold text-white/90 sm:text-xl">
+          <span className="font-display text-2xl font-light tracking-[-0.05em] text-white/90 sm:text-3xl">
             {project.clientName}
           </span>
           {project.externalUrl && (
@@ -356,7 +356,7 @@ function ProjectCover({
           <span className="text-xs font-medium uppercase tracking-widest text-zinc-500">
             Sistema interno
           </span>
-          <span className="mt-2 max-w-[220px] text-sm text-zinc-400">
+          <span className="mt-2 max-w-[220px] text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-400">
             Vista representativa del sistema desarrollado
           </span>
         </>
@@ -388,7 +388,7 @@ function ProjectCover({
       />
       {isLive && project.externalUrl && showImage && (
         <div className="absolute inset-0 flex items-center justify-center bg-zinc-950/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-zinc-950/80 px-4 py-2 text-sm font-medium text-cyan-300">
+          <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-zinc-950/80 px-4 py-2 text-sm font-light tracking-[-0.01em] text-cyan-300">
             <ExternalLink className="h-4 w-4" />
             {projectsPageCopy.visitSite}
           </span>
@@ -433,7 +433,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
           <span
             className={cn(
-              "rounded-full border px-2 py-0.5 text-[0.6rem] font-medium uppercase tracking-wider sm:px-2.5 sm:text-xs",
+              "rounded-full border px-2 py-0.5 text-[0.6rem] font-medium uppercase tracking-[0.18em] sm:px-2.5 sm:text-xs",
               accent.badge,
             )}
           >
@@ -441,7 +441,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           </span>
           <span
             className={cn(
-              "rounded-full border px-2 py-0.5 text-[0.6rem] font-medium uppercase tracking-wider sm:text-[0.65rem]",
+              "rounded-full border px-2 py-0.5 text-[0.6rem] font-medium uppercase tracking-[0.18em] sm:text-[0.65rem]",
               isLive
                 ? "border-cyan-500/20 bg-cyan-500/5 text-cyan-400/80"
                 : "border-violet-500/20 bg-violet-500/5 text-violet-400/80",
@@ -451,20 +451,20 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           </span>
           <span className="font-mono text-xs text-white/75 sm:text-sm">{project.year}</span>
           {isComingSoon && (
-            <span className="rounded-full border border-zinc-700/80 bg-zinc-800/50 px-2 py-0.5 text-[0.65rem] font-medium uppercase tracking-wider text-white/80">
+            <span className="rounded-full border border-zinc-700/80 bg-zinc-800/50 px-2 py-0.5 text-[0.65rem] font-medium uppercase tracking-[0.18em] text-white/80">
               Próximamente
             </span>
           )}
         </div>
 
-        <h3 className="mt-3 font-display text-xl font-semibold leading-snug tracking-tight text-white sm:mt-4 sm:text-2xl">
+        <h3 className="mt-4 font-display text-3xl font-light leading-[1.06] tracking-[-0.055em] text-white sm:text-4xl">
           {project.title}
         </h3>
-        <p className="mt-1 text-sm leading-snug text-white/85 sm:mt-1.5 sm:text-base">
+        <p className="mt-2 text-sm font-light leading-snug tracking-[-0.01em] text-white/80 sm:text-base">
           {project.clientName}
         </p>
 
-        <p className="mt-2.5 text-sm leading-relaxed text-white/95 sm:mt-3 sm:text-base sm:leading-relaxed md:text-[1.05rem]">
+        <p className="mt-4 text-sm font-light leading-relaxed tracking-[-0.01em] text-white/90 sm:text-base sm:leading-relaxed md:text-[1.05rem]">
           {project.summary}
         </p>
 
@@ -472,7 +472,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
           {project.highlights.map((highlight) => (
             <li
               key={highlight}
-              className="flex items-start gap-2 text-sm leading-snug text-white sm:gap-2.5 sm:text-base"
+              className="flex items-start gap-2 text-sm font-light leading-relaxed tracking-[-0.01em] text-white/90 sm:gap-2.5 sm:text-base"
             >
               <span
                 className={cn("mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full sm:mt-2 sm:h-1 sm:w-1", accent.dot)}
@@ -487,7 +487,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="shrink-0 rounded-md border border-zinc-700/80 bg-zinc-950/50 px-2 py-0.5 font-mono text-[0.7rem] text-white sm:px-2.5 sm:py-1 sm:text-sm"
+                className="shrink-0 rounded-md border border-zinc-700/80 bg-zinc-950/50 px-2 py-0.5 font-mono text-[0.7rem] font-light tracking-[-0.01em] text-white sm:px-2.5 sm:py-1 sm:text-sm"
               >
                 {tech}
               </span>
@@ -509,7 +509,7 @@ export function ProjectCard({ project, className }: ProjectCardProps) {
         )}
 
         {!isLive && (
-          <p className="mt-5 text-center text-xs font-medium uppercase tracking-widest text-white/75 sm:mt-6 sm:text-sm">
+          <p className="mt-5 text-center text-xs font-medium uppercase tracking-[0.22em] text-white/75 sm:mt-6 sm:text-sm">
             {projectsPageCopy.confidentialNote}
           </p>
         )}

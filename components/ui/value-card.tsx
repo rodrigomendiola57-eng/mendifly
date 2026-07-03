@@ -20,7 +20,6 @@ interface ValueCardProps {
 
 export function ValueCard({ item, index, active = false }: ValueCardProps) {
   const isCoarse = useCoarsePointer();
-  const Icon = item.icon;
 
   // 3D tilt
   const mouseX = useMotionValue(0);
@@ -55,16 +54,22 @@ export function ValueCard({ item, index, active = false }: ValueCardProps) {
       onMouseEnter={() => !isCoarse && setHovered(true)}
       onMouseLeave={handleLeave}
       style={isCoarse ? undefined : { rotateX, rotateY, transformStyle: "preserve-3d" }}
-      animate={{ scale: active ? 1.02 : 1 }}
-      transition={{ type: "spring", stiffness: 260, damping: 22 }}
+      animate={isCoarse ? { opacity: active ? 1 : 0.82 } : { scale: active ? 1.02 : 1 }}
+      transition={
+        isCoarse
+          ? { duration: 0.2, ease: "easeOut" }
+          : { type: "spring", stiffness: 260, damping: 22 }
+      }
       className={cn(
-        "relative flex min-h-[480px] w-full flex-col overflow-hidden rounded-3xl",
-        "bg-gradient-to-b from-cyan-950/35 via-zinc-900/45 to-zinc-950/75 backdrop-blur-2xl",
+        "relative flex min-h-[360px] w-full flex-col overflow-hidden rounded-[2rem] md:min-h-[480px]",
+        "bg-gradient-to-b from-white/[0.045] via-zinc-900/35 to-zinc-950/70 backdrop-blur-md md:backdrop-blur-2xl",
         "ring-1 ring-cyan-500/10",
         "transition-shadow duration-500",
-        on
-          ? "shadow-[0_0_60px_rgba(6,182,212,0.32),0_0_100px_rgba(59,130,246,0.12),0_32px_64px_rgba(0,0,0,0.5)] ring-cyan-400/25"
-          : "shadow-[0_0_30px_rgba(6,182,212,0.14),0_20px_48px_rgba(0,0,0,0.35)]",
+        on && isCoarse
+          ? "shadow-[0_0_28px_rgba(6,182,212,0.18),0_18px_40px_rgba(0,0,0,0.35)] ring-cyan-400/20"
+          : on
+            ? "shadow-[0_0_60px_rgba(6,182,212,0.32),0_0_100px_rgba(59,130,246,0.12),0_32px_64px_rgba(0,0,0,0.5)] ring-cyan-400/25"
+            : "shadow-[0_0_30px_rgba(6,182,212,0.14),0_20px_48px_rgba(0,0,0,0.35)]",
       )}
     >
       {/* Top accent gradient bar */}
@@ -76,7 +81,7 @@ export function ValueCard({ item, index, active = false }: ValueCardProps) {
             ? "linear-gradient(90deg, transparent, #22d3ee 30%, #3b82f6 60%, transparent)"
             : "linear-gradient(90deg, transparent, rgba(6,182,212,0.25) 50%, transparent)",
         }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: isCoarse ? 0.2 : 0.4 }}
       />
 
       {/* Cursor spotlight */}
@@ -94,19 +99,25 @@ export function ValueCard({ item, index, active = false }: ValueCardProps) {
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -bottom-12 left-1/2 h-32 w-48 -translate-x-1/2 rounded-full blur-3xl"
-        animate={{ opacity: on ? 0.55 : 0.2, scale: on ? 1.2 : 1 }}
-        transition={{ duration: 0.5 }}
+        animate={
+          isCoarse
+            ? { opacity: on ? 0.32 : 0.12, scale: 1 }
+            : { opacity: on ? 0.55 : 0.2, scale: on ? 1.2 : 1 }
+        }
+        transition={{ duration: isCoarse ? 0.2 : 0.5 }}
         style={{ background: "rgba(6,182,212,0.4)" }}
       />
 
       {/* Scan line on mount */}
-      <motion.div
-        aria-hidden
-        initial={{ top: 0, opacity: 0.9 }}
-        animate={{ top: "110%", opacity: 0 }}
-        transition={{ duration: 1.1, delay: index * 0.1 + 0.1, ease: "linear" }}
-        className="pointer-events-none absolute inset-x-0 z-20 h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent"
-      />
+      {!isCoarse && (
+        <motion.div
+          aria-hidden
+          initial={{ top: 0, opacity: 0.9 }}
+          animate={{ top: "110%", opacity: 0 }}
+          transition={{ duration: 1.1, delay: index * 0.1 + 0.1, ease: "linear" }}
+          className="pointer-events-none absolute inset-x-0 z-20 h-[1.5px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent"
+        />
+      )}
 
       {/* Corner brackets */}
       {[
@@ -120,7 +131,7 @@ export function ValueCard({ item, index, active = false }: ValueCardProps) {
           aria-hidden
           className={`pointer-events-none absolute ${pos} h-5 w-5`}
           animate={{ opacity: on ? 1 : 0.25 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: isCoarse ? 0.2 : 0.3 }}
         >
           <div className="absolute left-0 top-0 h-[1.5px] w-4 bg-cyan-400/70" />
           <div className="absolute left-0 top-0 h-4 w-[1.5px] bg-cyan-400/70" />
@@ -128,41 +139,44 @@ export function ValueCard({ item, index, active = false }: ValueCardProps) {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 flex flex-1 flex-col p-7">
-        {/* Icon */}
+      <div className="relative z-10 flex flex-1 flex-col p-7 md:p-8">
+        {/* Minimal technical marker */}
         <motion.div
-          animate={on ? { scale: 1.12, y: -4 } : { scale: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 340, damping: 20 }}
-          className={cn(
-            "flex h-14 w-14 items-center justify-center rounded-2xl",
-            "bg-cyan-500/12 text-cyan-400",
-            "ring-1 ring-cyan-500/30 transition-all duration-400",
-            on && "bg-cyan-500/20 ring-cyan-400/50 shadow-[0_0_32px_rgba(6,182,212,0.45)]",
-          )}
+          animate={
+            isCoarse
+              ? { opacity: on ? 1 : 0.82 }
+              : on
+                ? { opacity: 1, x: 0 }
+                : { opacity: 0.78, x: 0 }
+          }
+          transition={
+            isCoarse
+              ? { duration: 0.2, ease: "easeOut" }
+              : { duration: 0.25, ease: "easeOut" }
+          }
+          className="flex items-center gap-3"
         >
-          {on && (
-            <motion.div
-              aria-hidden
-              initial={{ scale: 0.7, opacity: 0.7 }}
-              animate={{ scale: 2, opacity: 0 }}
-              transition={{ duration: 0.65, ease: "easeOut" }}
-              className="absolute inset-0 rounded-2xl bg-cyan-500/25"
-            />
-          )}
-          <Icon className="relative z-10 h-6 w-6" strokeWidth={1.5} />
+          <span
+            className={cn(
+              "font-mono text-[0.65rem] tracking-[0.28em]",
+              on ? "text-cyan-300" : "text-cyan-500/60",
+            )}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span
+            aria-hidden
+            className={cn(
+              "h-px flex-1 bg-gradient-to-r transition-opacity duration-300",
+              on
+                ? "from-cyan-400/80 via-blue-400/45 to-transparent opacity-100"
+                : "from-cyan-500/30 to-transparent opacity-60",
+            )}
+          />
         </motion.div>
 
-        {/* Number tag */}
-        <motion.span
-          className="mt-6 font-mono text-[0.65rem] tracking-[0.25em] text-cyan-500/60"
-          animate={{ color: on ? "rgba(34,211,238,0.95)" : "rgba(6,182,212,0.5)" }}
-          transition={{ duration: 0.3 }}
-        >
-          {String(index + 1).padStart(2, "0")}
-        </motion.span>
-
         {/* Title */}
-        <h3 className="mt-2 font-display text-xl font-bold tracking-tight text-white sm:text-2xl">
+        <h3 className="mt-7 font-display text-2xl font-light leading-[1.08] tracking-[-0.04em] text-white sm:text-3xl md:text-4xl">
           {item.title}
         </h3>
 
@@ -171,7 +185,10 @@ export function ValueCard({ item, index, active = false }: ValueCardProps) {
           className="mt-4 h-px w-full origin-left"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.6, delay: index * 0.08 + 0.3 }}
+          transition={{
+            duration: isCoarse ? 0.2 : 0.6,
+            delay: isCoarse ? 0 : index * 0.08 + 0.3,
+          }}
           style={{
             background: "linear-gradient(90deg, rgba(6,182,212,0.55), transparent)",
           }}
@@ -180,22 +197,12 @@ export function ValueCard({ item, index, active = false }: ValueCardProps) {
         {/* Description */}
         <motion.p
           className={cn(
-            "mt-5 flex-1 text-[0.9rem] leading-relaxed transition-colors duration-300",
+            "mt-5 flex-1 text-[0.95rem] font-light leading-relaxed tracking-[-0.01em] transition-colors duration-300 md:text-base",
             on ? "text-zinc-300" : "text-zinc-500",
           )}
         >
           {item.description}
         </motion.p>
-
-        {/* Bottom CTA arrow */}
-        <motion.div
-          className="mt-6 flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-widest text-cyan-500/50"
-          animate={{ x: on ? 6 : 0, color: on ? "rgba(34,211,238,0.9)" : "rgba(6,182,212,0.45)" }}
-          transition={{ type: "spring", stiffness: 280, damping: 22 }}
-        >
-          <span>Explorar</span>
-          <span aria-hidden>→</span>
-        </motion.div>
       </div>
     </motion.div>
   );

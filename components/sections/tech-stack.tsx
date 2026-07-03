@@ -1,6 +1,6 @@
 "use client";
 
-import { Beams } from "@/components/ui/beams";
+import { BeamsBackdrop } from "@/components/ui/beams-backdrop";
 import { FadeUp } from "@/components/ui/fade-up";
 import { ShimmerText } from "@/components/ui/shimmer-text";
 import { TechGrid } from "@/components/ui/tech-grid";
@@ -12,7 +12,7 @@ export function TechStack() {
   return (
     <section id="tecnologias" className="relative overflow-hidden bg-[#050505]">
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <Beams
+        <BeamsBackdrop
           lightColor="#3b82f6"
           beamWidth={3.1}
           beamHeight={30}

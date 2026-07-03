@@ -139,7 +139,7 @@ function ProcessCard({
     >
       <h3
         className={cn(
-          "font-display text-lg font-semibold tracking-tight md:text-xl",
+          "font-display text-2xl font-light leading-[1.08] tracking-[-0.05em] md:text-3xl",
           isIlluminated ? "text-white" : "text-zinc-400",
         )}
       >
@@ -147,7 +147,7 @@ function ProcessCard({
       </h3>
       <p
         className={cn(
-          "mt-2.5 text-sm leading-relaxed transition-colors",
+          "mt-3 text-sm font-light leading-relaxed tracking-[-0.01em] transition-colors md:text-[0.95rem]",
           isIlluminated ? "text-zinc-300" : "text-zinc-500",
         )}
       >
@@ -155,7 +155,7 @@ function ProcessCard({
       </p>
       <p
         className={cn(
-          "mt-4 text-xs font-medium uppercase tracking-widest",
+          "mt-5 text-[0.68rem] font-medium uppercase tracking-[0.22em]",
           isIlluminated ? accent.highlight : "text-zinc-600",
         )}
       >
@@ -173,13 +173,13 @@ export function ServicesProcess() {
     <section className="relative">
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-24">
         <FadeUp inView delay={0.05} className="mb-10 max-w-2xl md:mb-14">
-          <p className="text-sm font-medium uppercase tracking-widest text-sky-400/90">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-sky-400/90 sm:text-sm">
             Metodología
           </p>
           <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
             Cómo entregamos valor
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-zinc-400 md:text-base">
+          <p className="mt-5 text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-400 md:text-base">
             Un proceso pensado para que inviertas con claridad, veas resultados
             reales y tengas un equipo de desarrollo que responde cuando tu
             negocio lo necesita.

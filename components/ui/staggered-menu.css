@@ -1,4 +1,4 @@
-/* ── StaggeredMenu (React Bits) — Menditech dark theme, mobile-only ── */
+/* ── StaggeredMenu (React Bits) — Mendifly dark theme, mobile-only ── */
 
 .staggered-menu-wrapper {
   position: relative;
@@ -137,7 +137,7 @@
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/* Panel — tema oscuro Menditech */
+/* Panel — tema oscuro Mendifly */
 .staggered-menu-panel {
   position: absolute;
   top: 0;

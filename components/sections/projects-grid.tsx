@@ -32,10 +32,10 @@ function ProjectSection({
         <p className="text-xs font-medium uppercase tracking-widest text-violet-400/90 sm:text-sm">
           {eyebrow}
         </p>
-        <h2 className="font-display mt-2 text-2xl font-semibold tracking-tight text-white sm:mt-3 sm:text-3xl md:text-4xl">
+        <h2 className="font-display mt-3 text-3xl font-light leading-[1.05] tracking-[-0.055em] text-white sm:text-4xl md:text-5xl">
           {title}
         </h2>
-        <p className="mx-auto mt-2.5 max-w-xl text-sm leading-relaxed text-zinc-300 sm:mt-3 sm:text-base sm:text-zinc-400">
+        <p className="mx-auto mt-3 max-w-xl text-sm font-light leading-relaxed tracking-[-0.01em] text-zinc-300 sm:mt-4 sm:text-base sm:text-zinc-400">
           {description}
         </p>
       </FadeUp>

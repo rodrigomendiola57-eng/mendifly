@@ -22,16 +22,16 @@ export function ServicesPageHero() {
 
       <div className="pointer-events-none relative z-10 mx-auto max-w-7xl px-6 pb-16 pt-12 md:pb-20 md:pt-16">
         <FadeUp delay={0.1}>
-          <p className="text-sm font-medium uppercase tracking-widest text-cyan-500/80">
+          <p className="text-xs font-medium uppercase tracking-[0.28em] text-cyan-500/80 sm:text-sm">
             Módulo de Servicios
           </p>
-          <h1 className="font-display mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="font-display mt-3 max-w-3xl text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-white sm:mt-4 sm:text-4xl sm:leading-[1.08] md:text-5xl lg:text-6xl">
             Ingeniería de software{" "}
             <span className="bg-gradient-to-r from-cyan-300 via-cyan-400 to-teal-300 bg-clip-text text-transparent">
               a la medida
             </span>
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 md:text-lg">
+          <p className="mt-7 max-w-2xl text-base font-light leading-relaxed tracking-[-0.01em] text-zinc-400 md:text-lg">
             {HERO_SUBTITLE}
           </p>
         </FadeUp>

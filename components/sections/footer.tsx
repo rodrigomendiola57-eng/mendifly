@@ -75,7 +75,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-zinc-900 pt-8 text-center">
           <p className="text-sm text-zinc-500">
-            Copyright © 2026 Menditech Technology Studio. Todos los derechos
+            Copyright © 2026 Mendifly Technology Studio. Todos los derechos
             reservados.
           </p>
         </div>
